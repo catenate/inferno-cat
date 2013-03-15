@@ -1,0 +1,10 @@
+Dump /github/inferno-cat/sh-inferno/dump
+Edit ,|sort|uniq
+Load /github/inferno-cat/sh-inferno/dump
+du -n
+log
+ls -F | mc
+nbnow
+ls -ltr /n/local/usr/inferno/dis/
+mv /gitco/build-systems/sh-inferno/watch .
+mv /n/local/usr/inferno/dis/python .

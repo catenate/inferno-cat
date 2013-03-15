@@ -1,0 +1,10 @@
+#!/dis/sh
+if {~ $#* '0'} {
+	apply {
+		b = $1
+		echo $b | sed 's,^backup/,restore ,'
+		ls -l $b
+	} `{ls backup}
+	exit 0
+}
+cp -r -x backup/$1/* .

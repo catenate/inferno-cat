@@ -1,0 +1,15 @@
+#!/dis/sh
+pid=`{echo ${pid}}
+if {ftest -r watch.out.old.$pid} {rm watch.out.old.$pid}
+touch watch.out.old.$pid
+
+while {ftest -r watch.out.old.$pid} {
+	$* > watch.out.new.$pid >[2=1]
+	if {! cmp watch.out.old.$pid watch.out.new.$pid} {
+		date >> watch.log.$pid
+		diff watch.out.old.$pid watch.out.new.$pid >> watch.log.$pid
+		echo >> watch.log.$pid
+	}
+	sleep 2
+	mv watch.out.new.$pid watch.out.old.$pid
+}

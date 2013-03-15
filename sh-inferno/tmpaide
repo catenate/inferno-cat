@@ -1,0 +1,7 @@
+#!/dis/sh
+aides = /*/Aide
+aides = $aides `{du -n /getco | grep Aide}
+aides = $aides `{du -n /gitco | grep Aide}
+aides = $aides `{du -n /github | grep Aide}
+aides = $aides `{du -n /test | grep Aide}
+ls -t $aides

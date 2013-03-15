@@ -1,0 +1,6 @@
+#!/dis/sh
+(cmd args) = $*
+if {no $cmd} {cmd = pwd}
+d = `{echo $emuroot^`{pwd} | sed 's,^/usr/inferno/n/local,,'}
+os -d^$d $cmd $args
+log host $*

@@ -1,0 +1,5 @@
+#!/dis/sh
+date = `{os date '+%Y%m%d.%H%M%S'}
+dir = backup/$date
+mkdir -p backup/$date
+if {! ~ $#* '0'} {cp -r -x $* backup/$date}

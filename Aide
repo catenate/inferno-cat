@@ -1,0 +1,20 @@
+Dump /github/inferno-cat/dump
+Edit ,|sort|uniq
+Load /github/inferno-cat/dump
+cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
+du -n | grep -v '\.git' | grep Aide
+du -n | grep -v '\.git' | grep sh-inferno
+du | grep -v '\.git'
+git
+git commit -a -m 'First batch of commands.'
+host gedit scratch
+host git add .
+host git commit -a -m 'First batch of commands.'
+host git diff
+host git log --decorate --graph --oneline --all | sed 10q
+host git status
+log
+log 1 git | grep add
+log git
+log git | grep -v commit
+ls -F | mc
