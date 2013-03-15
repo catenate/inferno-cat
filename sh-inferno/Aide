@@ -7,4 +7,5 @@ ls -F | mc
 nbnow
 ls -ltr /n/local/usr/inferno/dis/
 mv /gitco/build-systems/sh-inferno/watch .
+mv /gitco/notabene/sh-inferno/web .
 mv /n/local/usr/inferno/dis/python .

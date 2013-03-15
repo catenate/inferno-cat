@@ -1,0 +1,10 @@
+#!/dis/sh
+if {~ $#* 0} {
+	cat aide.log >[2]/dev/null
+	exit
+}
+
+apply {grep -i $1 /tmp/Aide} $* | tee -a aide.log
+
+sort aide.log | uniq > aide.log.tmp
+mv aide.log.tmp aide.log

@@ -1,0 +1,5 @@
+#!/dis/sh
+query = $*
+if {no $query} {web http://www.fileformat.info/info/unicode/char/search.htm; exit 0}
+query = `{echo $query | sed 's, ,+,g'}
+os -d^`{ospwd} google-chrome 'http://www.fileformat.info/info/unicode/char/search.htm?q='^$query

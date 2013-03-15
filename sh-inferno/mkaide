@@ -1,0 +1,11 @@
+#!/dis/sh
+mkdir -p $1
+cd $1
+echo 'Dump '^`{pwd}^'/dump
+Edit ,|sort|uniq
+Load '^`{pwd}^'/dump
+du -n
+log
+ls -F | mc
+nbnow' > Aide
+plumb Aide

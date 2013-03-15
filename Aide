@@ -6,10 +6,10 @@ du -n | grep -v '\.git' | grep Aide
 du -n | grep -v '\.git' | grep sh-inferno
 du | grep -v '\.git'
 git
-git commit -a -m 'First batch of commands.'
+git commit -a -m 'Second batch of commands.'
 host gedit scratch
 host git add .
-host git commit -a -m 'First batch of commands.'
+host git commit -m 'Delete host command log.'
 host git diff
 host git log --decorate --graph --oneline --all | sed 10q
 host git status

@@ -1,0 +1,24 @@
+#!/dis/sh
+tmp = /tmp/fuzzy.${pid}
+
+load arg
+args = $*
+(arg 
+	i  {grepopts = $grepopts -$opt}
+	n  {grepopts = $grepopts -$opt}
+	v  {grepopts = $grepopts -$opt}
+	'*' {echo unknown option $opt}
+	- $args
+)
+
+cat > $tmp
+res = $*
+apply {
+	re = $1
+	re = `{echo $re | sed 's,(.),[\1]+.*,g'}
+	grep $grepopts $re $tmp > $tmp.2
+	mv $tmp.2 $tmp
+} $res
+
+cat $tmp
+rm $tmp

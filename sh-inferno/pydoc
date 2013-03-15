@@ -1,0 +1,6 @@
+#!/dis/sh
+query = $*
+if {no $query} {web http://docs.python.org; exit 0}
+query = `{echo $query | sed 's, ,+,g'}
+web 'http://docs.python.org/2/search.html?q='^$query
+log pydoc $*

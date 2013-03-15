@@ -1,0 +1,2 @@
+#!/dis/sh
+fmt | sed 's,^[ 	]+,,' | sed '1s,^,	,' | fmt | sed '2s,^	,,' | fmt

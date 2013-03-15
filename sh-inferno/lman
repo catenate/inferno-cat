@@ -1,0 +1,15 @@
+#!/dis/sh
+if {~ $1 '[0-9]*'} {
+	(section topics) = $*
+	apply {
+		topic = $1
+		plumb $topic^'('^$section^')'
+	} $topics
+	log lman $section $topic
+} {
+	topics = $*
+	apply {
+		topic = $1
+		lookman $topic | sed 's,^man ,lman ,'
+	} $topics
+}

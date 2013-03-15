@@ -1,0 +1,4 @@
+#!/dis/sh
+dos gedit $emuroot/tmp/Gedit.$acmewin
+cat /tmp/Gedit.$acmewin > /mnt/acme/$acmewin/body
+rm /tmp/Gedit.$acmewin
