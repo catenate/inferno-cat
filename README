@@ -1,3 +1,8 @@
 My own additions and changes to Inferno.  These may be no use to you
 if you don’t use Inferno, if you don’t need what they do, or if you don’t
 like my taste in small tools.
+
+You might incorporate these files into your Inferno installation by
+binding the sh-inferno subdirectory to /dis.
+
+	bind -a /github/inferno-cat/sh-inferno /dis
