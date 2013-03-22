@@ -4,12 +4,20 @@ if {no $*} {
 	exit 0
 }
 
+fn delerrfile {
+	tag = $1/tag
+	pf = `{cat $tag | sed 's, .*,,'}
+	p = `{echo $pf | sed 's,/?[^/]+$,,;s,^$,.,'}
+	f = `{basename $pf}
+	if {and {~ $f '*+Errors'} {ftest -e $pf}} {rm $pf}
+}
+
 fn delwin {
 	echo put > $1/ctl
 	echo del > $1/ctl
 }
 
-apply {delwin $1} `{ls -d /mnt/acme/[0-9]*}
+apply {delerrfile $1; delwin $1} `{ls -d /mnt/acme/[0-9]*}
 cat /tmp/Aide |  fuzzy $*
-echo switch $* >> /tmp/switches
+echo `{date -n }$* >> /tmp/switches
 tmpaide

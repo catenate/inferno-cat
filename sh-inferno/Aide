@@ -1,6 +1,8 @@
 Dump /github/inferno-cat/sh-inferno/dump
 Edit ,|sort|uniq
 Load /github/inferno-cat/sh-inferno/dump
+New elapsed
+chmod +x elapsed
 du -n
 log
 ls -F | mc
@@ -10,3 +12,7 @@ mv /gitco/build-systems/sh-inferno/watch .
 mv /gitco/notabene/sh-inferno/web .
 mv /n/local/usr/inferno/dis/python .
 nbnow
+elapsed snack
+elapsed break
+elapsed credo
+elapsed inferno-cat
