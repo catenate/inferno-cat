@@ -1,0 +1,15 @@
+#!/dis/sh
+if {no $*} {
+	cat /tmp/switches
+	exit 0
+}
+
+fn delwin {
+	echo put > $1/ctl
+	echo del > $1/ctl
+}
+
+apply {delwin $1} `{ls -d /mnt/acme/[0-9]*}
+cat /tmp/Aide |  fuzzy $*
+echo switch $* >> /tmp/switches
+tmpaide

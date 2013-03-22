@@ -5,16 +5,11 @@ cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
 du -n | grep -v '\.git' | grep Aide
 du -n | grep -v '\.git' | grep sh-inferno
 du | grep -v '\.git'
+gedit scratch
 git
-git commit -a -m 'Document my bind command.'
-host gedit scratch
-host git add .
-host git commit -m 'Delete host command log.'
-host git diff
-host git log --decorate --graph --oneline --all | sed 10q
-host git status --porcelain
+git commit -a -m 'Add switch to more quickly change Acme contexts.'
+git diff
+git log --decorate --graph --oneline --all | sed 10q
 log
-log 1 git | grep add
 log git
-log git | grep -v commit
 ls -F | mc
