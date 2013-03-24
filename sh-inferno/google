@@ -3,5 +3,5 @@ query = $*
 if {no $query} {web google.com; exit 0}
 d = `{echo $emuroot^`{pwd} | sed 's,^/usr/inferno/n/local,,'}
 query = `{echo $query | sed 's, ,+,g'}
-os -d^$d google-chrome 'http://www.google.com/search?q='^$query
+web 'http://www.google.com/search?q='^$query
 log google $*
