@@ -2,8 +2,13 @@ Dump /github/inferno-cat/sh-inferno/dump
 Edit ,|sort|uniq
 Load /github/inferno-cat/sh-inferno/dump
 New elapsed
+apply {time = $1; echo `{date $time} `{grep $time /tmp/switches | sed 's,.* ,,'}} `{sed 's, .*,,' /tmp/switches}
 chmod +x elapsed
 du -n
+elapsed break
+elapsed credo
+elapsed inferno-cat
+elapsed snack
 log
 ls -F | mc
 ls -ltr /n/local/usr/inferno/dis/
@@ -12,7 +17,3 @@ mv /gitco/build-systems/sh-inferno/watch .
 mv /gitco/notabene/sh-inferno/web .
 mv /n/local/usr/inferno/dis/python .
 nbnow
-elapsed snack
-elapsed break
-elapsed credo
-elapsed inferno-cat

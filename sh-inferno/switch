@@ -1,6 +1,10 @@
 #!/dis/sh
 if {no $*} {
-	cat /tmp/switches
+	fn fmttime {
+		time = $1
+		echo `{date $time} `{grep $time /tmp/switches | sed 's,.* ,,'}
+	}
+	apply {fmttime $1} `{sed 's, .*,,' /tmp/switches}
 	exit 0
 }
 
