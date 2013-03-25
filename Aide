@@ -8,7 +8,7 @@ du -n | grep -v '\.git' | grep sh-inferno
 du | grep -v '\.git'
 gedit scratch
 git
-git commit -a -m 'Switch with no parameters prints times from /tmp/switches in date form.'
+git commit -a -m 'Elapsed changes to just list matching elapsed times.  With no parameters, print time since switches began.  Elapsum does old elapsed functionality.'
 git diff
 git log --decorate --graph --oneline --all | sed 10q
 log

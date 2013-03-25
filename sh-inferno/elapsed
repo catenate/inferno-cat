@@ -1,27 +1,23 @@
 #!/dis/sh
-
-if {no $*} {
-	first = `{sed -n '1s, .*,,p' /tmp/switches}
-	last = `{sed -n '$s, .*,,p' /tmp/switches}
-	date -u `{fc $last $first -}
-	exit 0
-}
-
 context = $*
-next = 0
-elapsed = 0
+if {no $context} {
+	next = 1
+	past = `{sed -n '1s, .*,,p' /tmp/switches}
+} {
+	next = 0
+}
 
 apply {
 	time = $1
 	if {~ $next 1} {
-		elapsed = `{fc $elapsed $time $past - +}
+		echo `{fc $time $past -}
 		next = 0
 	}
 	c = `{grep $time /tmp/switches | sed 's,.* ,,'}
-	if {~ $"c $"context} {
+	if {or {no $context} {~ $"c $"context}} {
 		past = $time
 		next = 1
 	}
 } `{cat /tmp/switches | sed 's, .*,,'}
 
-date -u $elapsed
+exit 0
