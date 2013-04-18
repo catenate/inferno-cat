@@ -7,8 +7,7 @@ du -n | grep -v '\.git' | grep sh-inferno
 du | grep -v '\.git'
 gedit scratch
 git
-git commit -a -m 'Update lman to display new man pages, and from emu.  Add plot to graph any series of numbers.  Add fixfn to remove whitespace characters from filenames.  Add joinfile to merge fields in each corresponding line of two files of the same size.  Rename tmpaide to aide.'
-git diff
+git commit -a -m 'Actually add new files.'
 git log --decorate --graph --oneline --all | sed 10q
 log
 log git

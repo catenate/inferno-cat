@@ -1,0 +1,6 @@
+#!/dis/sh
+apply {
+	echo 'set term png
+	set output "'^$1^'.png"
+	plot "'^$1^'" with points 0' | host gnuplot
+} $*

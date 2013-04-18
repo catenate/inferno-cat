@@ -1,0 +1,8 @@
+#!/dis/sh
+(f1 f2) = $*
+if {or {no $f1} {no $f2}} {exit 1}
+f1len = `{cat $f1 | wc -l}
+f2len = `{cat $f2 | wc -l}
+if {! ~  $f1len $f2len} {exit 1}
+load expr
+apply {l = $1; echo `{sed -n $l^'p' $f1} `{sed -n $l^'p' $f2}} ${expr 1 $f1len seq}

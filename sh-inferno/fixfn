@@ -1,0 +1,3 @@
+#!/dis/sh
+fn = $"*
+mv $"fn `{echo $"fn | sed 's,[ (){}],,g'}
