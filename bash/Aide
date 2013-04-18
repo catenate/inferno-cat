@@ -1,0 +1,9 @@
+Dump /github/inferno-cat/bash/dump
+Edit ,|sort|uniq
+Load /github/inferno-cat/bash/dump
+cp /n/local/home/apprun/bin/*emu* .
+cp emubind2 inferno
+du -n
+log
+ls -F | mc
+nbnow

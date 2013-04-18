@@ -1,0 +1,1 @@
+emubind $(pwd | sed 's,^,/n/local,;s,^/n/local/usr/inferno,,;s,^$,/,') $* 2>/dev/null
