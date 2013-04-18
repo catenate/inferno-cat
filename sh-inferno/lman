@@ -1,15 +1,25 @@
 #!/dis/sh
+load std
+
 if {~ $1 '[0-9]*'} {
 	(section topics) = $*
 	apply {
 		topic = $1
-		plumb $topic^'('^$section^')'
+		if {! plumb $topic^'('^$section^')'} {
+			man2txt /man/$section/$topic
+		}
 	} $topics
 	log lman $section $topic
 } {
 	topics = $*
 	apply {
 		topic = $1
-		lookman $topic | sed 's,^man ,lman ,'
+		if {! lookman $topic | sed 's,^man ,lman ,'} {
+			if {ftest -e /man/1/$topic} {
+				if {! wm/man -f /man/1/$topic} {
+					man -f /man/1/$topic
+				}
+			}
+		}
 	} $topics
 }

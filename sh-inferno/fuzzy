@@ -1,4 +1,6 @@
 #!/dis/sh
+load std
+
 tmp = /tmp/fuzzy.${pid}
 
 load arg

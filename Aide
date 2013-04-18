@@ -4,11 +4,10 @@ Load /github/inferno-cat/dump
 cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
 du -n | grep -v '\.git' | grep Aide
 du -n | grep -v '\.git' | grep sh-inferno
-	
 du | grep -v '\.git'
 gedit scratch
 git
-git commit -a -m 'Elapsed changes to just list matching elapsed times.  With no parameters, print time since switches began.  Elapsum does old elapsed functionality.'
+git commit -a -m 'Update lman to display new man pages, and from emu.  Add plot to graph any series of numbers.  Add fixfn to remove whitespace characters from filenames.  Add joinfile to merge fields in each corresponding line of two files of the same size.  Rename tmpaide to aide.'
 git diff
 git log --decorate --graph --oneline --all | sed 10q
 log

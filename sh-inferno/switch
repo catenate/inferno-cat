@@ -22,6 +22,6 @@ fn delwin {
 }
 
 apply {delerrfile $1; delwin $1} `{ls -d /mnt/acme/[0-9]*}
-cat /tmp/Aide |  fuzzy $*
+aide $*
 echo `{date -n }$* >> /tmp/switches
-tmpaide
+aide
