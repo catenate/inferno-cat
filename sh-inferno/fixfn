@@ -1,3 +1,8 @@
 #!/dis/sh
-fn = $"*
-mv $"fn `{echo $"fn | sed 's,[ (){}],,g'}
+# apply {fixfn $1} *
+old = $*
+new = `{echo $old | sed 's,[	  (){}]+,,g'}
+if {! ~ $old $new} {
+	mv $"old $"new
+}
+exit 0
