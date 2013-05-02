@@ -1,4 +1,6 @@
 #!/dis/sh
+load std
+
 pid=`{echo ${pid}}
 if {ftest -r watch.out.old.$pid} {rm watch.out.old.$pid}
 touch watch.out.old.$pid

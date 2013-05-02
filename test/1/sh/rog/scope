@@ -1,0 +1,10 @@
+#!/dis/sh
+a = b
+{
+	a := c
+	b = d
+	c = e
+	d := f
+	echo $a '-' $b '-' $c '-' $d
+}
+echo $a '-' $b '-' $c '-' $d

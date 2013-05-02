@@ -1,0 +1,14 @@
+#!/dis/sh
+load tk
+wid := ${tk window 'Test'}
+fn x {
+	args := $*
+	or {tk $wid $args} {
+		echo error: tk $wid $"args^':' $status
+	}
+}
+x button .b -text {A button}
+x pack .b -side top
+x update
+tk onscreen $wid
+sleep 10

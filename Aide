@@ -7,7 +7,7 @@ du -n | grep -v '\.git' | grep sh-inferno
 du | grep -v '\.git'
 gedit scratch
 git
-git commit -a -m 'Add emubind* to call a programs or script from the command line (cp emubind2 inferno), and acme from command line.  Piping to and from these hangs.  Add *emuwm to start full-on inferno in window manager.'
+git commit -a -m 'Update host to include ssh, since now using sshfs under /netco.  Test some sh from rog’s paper.'
 git log --decorate --graph --oneline --all | sed 10q
 log
 log git

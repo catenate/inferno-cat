@@ -1,0 +1,11 @@
+Dump /github/inferno-cat/test/1/sh/rog/dump
+Edit ,|sort|uniq
+Load /github/inferno-cat/test/1/sh/rog/dump
+New shwin
+du -n
+host evince $emuroot/doc/sh.pdf
+log
+ls -F | mc
+nbnow
+sh scope
+sh shwin
