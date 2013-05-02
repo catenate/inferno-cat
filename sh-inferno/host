@@ -10,7 +10,6 @@ if {~ $cwd '*/netco/*'} {
 	dir = `{echo $cwd | sed 's,.*/netco/([^/]+)(/.*),\2,'}
 	d = `{echo $emuroot^`{pwd} | sed 's,^/usr/inferno/n/local,,'}
 	os -d^$d ssh $host cd $dir ';' $cmd
-	log ssh $cmd
 } {
 	d = `{echo $emuroot$cwd | sed 's,^/usr/inferno/n/local,,'}
 	os -d^$d $cmd $args
