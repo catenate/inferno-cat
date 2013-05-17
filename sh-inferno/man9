@@ -1,0 +1,7 @@
+#!/dis/sh
+apply {
+	m = /tmp/$1.man9
+	if {! ftest -r $m} {os 9 man $1 | os col -b > $m}
+	plumb $m
+	log man9 $1
+} $*

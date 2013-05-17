@@ -3,9 +3,9 @@ load std
 
 if {no $*} {
 	aides = /*/Aide
-	aides = $aides `{du -n /getco | grep Aide}
 	aides = $aides `{du -n /gitco | grep Aide}
 	aides = $aides `{du -n /github | grep Aide}
+	aides = $aides `{apply {du -n $1 | grep Aide} `{ls /netco | grep '/netco/\.'}}
 	aides = $aides `{du -n /test | grep Aide}
 	ls $aides > /tmp/Aide
 } {

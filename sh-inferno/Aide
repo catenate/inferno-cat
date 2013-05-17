@@ -1,9 +1,9 @@
 Dump /github/inferno-cat/sh-inferno/dump
 Edit ,|sort|uniq
 Load /github/inferno-cat/sh-inferno/dump
-New elapsed
+New 9
 apply {time = $1; echo `{date $time} `{grep $time /tmp/switches | sed 's,.* ,,'}} `{sed 's, .*,,' /tmp/switches}
-chmod +x elapsed
+chmod +x 9
 date -u `{foldal add 0 `{elapsed break}}
 date -u `{foldal add 0 `{elapsed}}
 du -n

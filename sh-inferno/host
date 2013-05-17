@@ -12,7 +12,7 @@ if {~ $cwd '*/netco/*'} {
 	os -d^$d ssh $host cd $dir ';' $cmd
 } {
 	d = `{echo $emuroot$cwd | sed 's,^/usr/inferno/n/local,,'}
-	os -d^$d $cmd $args
+	os -d^$d $cmd
 }
 
 log host $*
