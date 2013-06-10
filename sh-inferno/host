@@ -1,18 +1,18 @@
 #!/dis/sh
 load std
 
-cmd = $*
+if {~ $1 -l} {(l cmd) = $*} {cmd = $*}
 if {no $cmd} {cmd = pwd}
 cwd = `{pwd}
 
 if {~ $cwd '*/netco/*'} {
 	host = `{echo $cwd | sed 's,.*/netco/([^/]+)/.*,\1,'}
 	dir = `{echo $cwd | sed 's,.*/netco/([^/]+)(/.*),\2,'}
-	d = `{echo $emuroot^`{pwd} | sed 's,^/usr/inferno/n/local,,'}
+	d = `{echo $emuroot^`{pwd} | sed 's,^/usr/inferno,/usr/coinferno,;s,^/usr/coinferno/n/local,,'}
 	os -d^$d ssh $host cd $dir ';' $cmd
 } {
-	d = `{echo $emuroot$cwd | sed 's,^/usr/inferno/n/local,,'}
+	d = `{echo $emuroot$cwd | sed 's,^/usr/inferno,/usr/coinferno,;s,^/usr/coinferno/n/local,,'}
 	os -d^$d $cmd
 }
 
-log host $*
+if {! ~ $l -l} {log host $*}

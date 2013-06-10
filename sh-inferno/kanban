@@ -1,0 +1,13 @@
+#!/dis/sh
+load std
+
+if {no $*} {
+	kanbans = /*/kanban
+	kanbans = $kanbans `{du -n /gitco | grep 'kanban$'}
+	kanbans = $kanbans `{du -n /github | grep 'kanban$'}
+	kanbans = $kanbans `{apply {du -n $1 | grep 'kanban$'} `{ls /netco | grep '/netco/\.'}}
+	kanbans = $kanbans `{du -n /test | grep 'kanban$'}
+	ls $kanbans > /tmp/kanban
+} {
+	cat /tmp/kanban | fuzzy $*
+}
