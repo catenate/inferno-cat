@@ -1,5 +1,8 @@
 #!/dis/sh
 load std
+(grep fuzzy) = $*
+if {no $grep} {grep = :}
+if {no $fuzzy} {fuzzy = /}
 
 if {no $*} {
 	kanbans = /*/kanban
@@ -9,5 +12,5 @@ if {no $*} {
 	kanbans = $kanbans `{du -n /test | grep 'kanban$'}
 	ls $kanbans > /tmp/kanban
 } {
-	cat /tmp/kanban | fuzzy $*
+	grep $grep `{cat /tmp/kanban | fuzzy $fuzzy}
 }

@@ -1,0 +1,9 @@
+#!/dis/sh
+echo $emuroot^`{pwd} | sed '
+	s,^/usr/inferno/getco,/usr/coinferno/getco,
+	s,^/usr/inferno/gitco,/usr/coinferno/gitco,
+	s,^/usr/inferno/github,/usr/coinferno/github,
+	s,^/usr/inferno/gitorious,/usr/coinferno/gitorious,
+	s,^/usr/inferno/netco,/usr/coinferno/netco,
+	s,^/usr/inferno/n/local,,
+'

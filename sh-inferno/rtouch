@@ -1,0 +1,7 @@
+#!/dis/sh
+f = $1
+host -l sudo touch $f
+u = `{host -l id -u -n}
+host -l sudo chown $u.$u $f
+host -l sudo chmod ugo+w $f
+echo '/n/cno-d-jcatena3'^`{pwd}^'/'^$f

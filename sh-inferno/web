@@ -1,5 +1,5 @@
 #!/dis/sh
 if {no $*} {web news.ycombinator.com; exit 0}
-d = `{echo $emuroot^`{pwd} | sed 's,^/usr/inferno/n/local,,'}
+d = `{echo $emuroot^`{pwd} | sed 's,^/usr/inferno/gitco,/usr/coinferno/gitco,;s,^/usr/inferno/n/local,,'}
 apply {os -d^$d google-chrome $1} $*
 log web $*

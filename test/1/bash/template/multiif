@@ -1,0 +1,3 @@
+if [[ "$virtual" == "" || "$program" == "" || "$version" == "" ]]; then
+	echo all empty
+fi
