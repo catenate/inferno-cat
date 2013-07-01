@@ -19,7 +19,6 @@ for f in $files; do
 done
 
 for f in $files; do
-	if test -f $dst/$f; then exit 2; fi
 	touch $dst/$f
 	sudo mount --bind $src/$f $dst/$f
 done
