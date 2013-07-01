@@ -12,14 +12,15 @@ if test -z $src || test -z $dst; then
 fi
 
 for f in $files; do
-	if test -f $dst/$f; then
+	if test -e $dst/$f; then
 		echo "$(basename $0): error: $dst/$f exists, will not overwrite and delete"
 		exit 2
 	fi
 done
 
 for f in $files; do
-	touch $dst/$f
+	if test -f $src/$f; then touch $dst/$f; fi
+	if test -d $src/$f; then mkdir $dst/$f; fi
 	sudo mount --bind $src/$f $dst/$f
 done
 
@@ -27,6 +28,7 @@ $*
 
 for f in $files; do
 	sudo unmount $dst/$f
-	rm $dst/$f
+	if test -f $dst/$f; then rm $dst/$f; fi
+	if test -d $dst/$f; then rmdir $dst/$f; fi
 done
 
