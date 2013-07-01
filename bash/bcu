@@ -1,0 +1,33 @@
+src=$1
+files=$(ls $src)
+shift
+
+dst=$1
+shift
+
+if test -z $src || test -z $dst; then
+	echo "usage: $(basename $0) \$src \$dst \$cmd"
+	echo "	mount files from \$src in \$dst while running \$cmd"
+	exit 1
+fi
+
+for f in $files; do
+	if test -f $dst/$f; then
+		echo "$(basename $0): error: $dst/$f exists, will not overwrite and delete"
+		exit 2
+	fi
+done
+
+for f in $files; do
+	if test -f $dst/$f; then exit 2; fi
+	touch $dst/$f
+	sudo mount --bind $src/$f $dst/$f
+done
+
+$*
+
+for f in $files; do
+	sudo unmount $dst/$f
+	rm $dst/$f
+done
+
