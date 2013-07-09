@@ -1,0 +1,20 @@
+With no parameters, it prints entries from the mount table which
+contain "funionfs".
+
+	ufs	# mount | grep funionfs
+
+With only one parameter, it adds a leading 'u', and takes that as the
+name of the directory to unmount.
+
+	ufs buildhdf5	# unmounts ./ubuildhdf5
+
+With two or more parameters, it adds a leading 'u' to the first, and
+takes that as the name of the union directory to (create and) mount.
+The remaining parameters are read-only directories which contribute
+to the union directory.
+
+	ufs buildhdf5 hdf5-1.8.7 ext_libs	# mounts union into ./ubuildhdf5
+
+Tested on SL6.2 with the x86_64 RPM of funionfs from this page.
+
+	http://dl.fedoraproject.org/pub/epel/6/x86_64/repoview/funionfs.html
