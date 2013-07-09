@@ -1,0 +1,21 @@
+if test -z $1; then
+	mount | grep funionfs
+	exit 0
+fi
+rw=$1
+u=u$rw
+shift
+
+if test -z $1; then
+	fusermount -u $u
+	exit 0
+fi
+ros=$*
+dirs=$(echo $ros | sed 's, ,=ro:,g;s,$,=ro,')
+
+if ! test -d $u; then
+	mkdir -p $u
+fi
+gid=$(id -g)
+uid=$(id -u)
+funionfs $rw $u -o dirs=$dirs -o gid=$gid -o uid=$uid
