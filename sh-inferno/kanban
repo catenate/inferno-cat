@@ -12,5 +12,5 @@ if {no $*} {
 	kanbans = $kanbans `{du -n /test | grep 'kanban$'}
 	ls $kanbans > /tmp/kanban
 } {
-	grep $grep `{cat /tmp/kanban | fuzzy $fuzzy}
+	grep $grep `{cat /tmp/kanban | fuzzy $fuzzy} /dev/null
 }
