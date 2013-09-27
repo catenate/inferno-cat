@@ -1,0 +1,6 @@
+#!/dis/sh
+if {no $*} {host /usr/bin/gnome-terminal -t `{host hostname}}
+apply {
+	host = $1
+	host /usr/bin/gnome-terminal -t $host -x  ssh -l apprun $host  &
+} $*
