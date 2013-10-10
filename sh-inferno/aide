@@ -1,13 +1,11 @@
 #!/dis/sh
 load std
 
-if {no $*} {
-	aides = /*/Aide
-	aides = $aides `{du -n /gitco | grep Aide}
-	aides = $aides `{du -n /github | grep Aide}
-	aides = $aides `{apply {du -n $1 | grep Aide} `{ls /netco | grep '/netco/\.'}}
-	aides = $aides `{du -n /test | grep Aide}
-	ls $aides > /tmp/Aide
-} {
-	cat /tmp/Aide | fuzzy $*
-}
+cat /tmp/Aide | fuzzy $*
+
+aides = /*/Aide
+aides = $aides `{du -n /gitco | grep Aide}
+aides = $aides `{du -n /github | grep Aide}
+aides = $aides `{apply {du -n $1 | grep Aide} `{ls /netco | grep '/netco/\.'}}
+aides = $aides `{du -n /test | grep Aide}
+ls $aides > /tmp/Aide
