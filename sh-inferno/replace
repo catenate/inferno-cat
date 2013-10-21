@@ -1,0 +1,24 @@
+#!/dis/sh
+self = $0
+self = `{echo $self | sed 's,.*/,,'}
+
+if {~ $1 '-n'} {
+	(opt old new files) = $*
+} {
+	(old new files) = $*
+}
+
+if {or {no $old} {no $new} {no $files}} {
+	echo 'usage: '^$self^' $old $new ($file)+'
+	echo '	replace $old text with $new in $files'
+	exit 1
+}
+
+apply {
+	file = $1
+	if {ftest -f $file} {
+		cp -x $file $file.${pid}
+		sed 's,'^$"old^','^$"new^',g' $file > $file.${pid}
+		mv $file.${pid} $file
+	}
+} $files
