@@ -1,0 +1,13 @@
+#!/dis/sh
+dir = $1
+mkdir -p $dir
+cd $dir
+echo 'Edit ,|sort|uniq
+Edit B < cat files
+New files
+du -n
+jira bld '^`{echo $dir | sed 's,^.*/,,'}^'
+log
+ls -F | mc
+nbnow' > Aide
+plumb Aide

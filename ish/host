@@ -1,17 +1,28 @@
 #!/dis/sh
 load std
+load arg
 
-if {~ $1 -l} {(l cmd) = $*} {cmd = $*}
+self = $0
+args = $*
+nolog = 0
+noremote = 0
+(arg 
+	l  {nolog = 1}
+	r  {noremote = 1}
+	'*' {echo $self: warning: unknown option $opt}
+	- $args
+)
+cmd = $*
+
 if {no $cmd} {cmd = pwd}
 cwd = `{pwd}
 
-if {~ $cwd '*/netco/*'} {
+if {~ $nolog 0} {log host $*}
+
+if {and {~ $cwd '*/netco/*'} {~ $noremote 0}} {
 	host = `{echo $cwd | sed 's,.*/netco/([^/]+)/.*,\1,;s,.*/netco/([^/]+)$,\1,'}
 	dir = `{echo $cwd | sed 's,.*/netco/([^/]+)(/.*),\2,;s,.*/netco/([^/]+)$,/,'}
 	os -d^`{osdir} ssh $host cd $dir ';' $cmd
 } {
 	os -d^`{osdir} $cmd
 }
-
-if {! ~ $l -l} {log host $*}
-exit 0

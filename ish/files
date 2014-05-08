@@ -1,0 +1,3 @@
+#!/dis/sh
+
+grep -i $* /files/* | sed 's,^[^:]+: ,,' | sort | uniq

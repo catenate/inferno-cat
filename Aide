@@ -8,7 +8,7 @@ du | grep -v '\.git'
 gedit scratch
 git
 git add .
-git commit -a -m 'Always regenerate aide index, like nb.'
+git commit -a -m 'Rename sh-inferno to ish (cf iar) for shortness.'
 git diff
 git diff --staged
 git log --decorate --graph --oneline --all | sed 10q

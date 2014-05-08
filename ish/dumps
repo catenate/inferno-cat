@@ -1,0 +1,6 @@
+#!/dis/sh
+
+apply {
+	dump = $1
+	echo 'Load /dump/'^$"dump `{grep Snarf $dump | awk '{print $6}' | sed 's,.*/,,;s,Aide,,g;s,\+Errors,,g'}
+} `{ls -tr | grep -v Aide | grep -v *.log} | grep $"*

@@ -11,4 +11,5 @@ s,^/usr/inferno/github,/usr/coinferno/github,
 s,^/usr/inferno/gitorious,/usr/coinferno/gitorious,
 s,^/usr/inferno/netco,/usr/coinferno/netco,
 s,^/usr/inferno/n/local,,
+s,^/usr/inferno/sqlco,/usr/coinferno/sqlco,
 '

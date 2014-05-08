@@ -1,0 +1,10 @@
+#!/dis/sh
+(sedcmd fs) = $*
+
+apply {
+	f = $1
+	tmpf = $f.tmp.${pid}
+	sed $sedcmd $f > $tmpf
+	#diff $f $tmpf
+	mv $tmpf $f
+} $fs
