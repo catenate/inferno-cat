@@ -1,0 +1,20 @@
+#!/dis/sh
+
+tmp = /tmp/xref.${pid}
+echo $tmp
+
+cwd = `{pwd}
+dir = $1
+
+cd $dir
+ls >$tmp
+cd $cwd
+
+apply {
+	f = $1
+	if {grep $f * >/dev/null >[2=1]} {echo $f}
+} `{
+	cat $tmp
+}
+
+rm $tmp

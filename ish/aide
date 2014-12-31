@@ -1,13 +1,15 @@
 #!/dis/sh
 load std
 
-cat /tmp/Aide | grep $*
-
-aides = /*/Aide
-aides = $aides `{du -n /gitco | grep Aide}
-aides = $aides `{du -n /github | grep Aide}
-dotaides = `{apply {du -n $1 | grep Aide} `{ls /netco | grep '/netco/\.'}}
-aides = $aides `{echo $dotaides | sed 's,(/netco/)\.,\1,'}
-aides = $aides /netco/*/home/apprun/Aide
-aides = $aides `{du -n /test | grep Aide}
-ls $aides >[2]/dev/null | sort | uniq > /tmp/Aide
+if {no $*} {
+	aides = /*/Aide
+	aides = $aides `{du -n /gitco | grep Aide}
+	aides = $aides `{du -n /github | grep Aide}
+	dotaides = `{apply {du -n $1 | grep Aide} `{ls /netco | grep '/netco/\.'}}
+	aides = $aides `{echo $dotaides | sed 's,(/netco/)\.,\1,'}
+	aides = $aides /netco/*/home/apprun/Aide
+	aides = $aides `{du -n /test | grep Aide}
+	ls $aides >[2]/dev/null | sort | uniq > /tmp/Aide
+} {
+	cat /tmp/Aide | grep $*
+}
