@@ -18,3 +18,5 @@ mv /gitco/build-systems/sh-inferno/watch .
 mv /gitco/notabene/sh-inferno/web .
 mv /n/local/usr/inferno/dis/python .
 nbnow
+whatis git
+whatis host

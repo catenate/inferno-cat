@@ -22,7 +22,7 @@ if {~ $nolog 0} {log host $*}
 if {and {~ $cwd '*/netco/*'} {~ $noremote 0}} {
 	host = `{echo $cwd | sed 's,.*/netco/([^/]+)/.*,\1,;s,.*/netco/([^/]+)$,\1,'}
 	dir = `{echo $cwd | sed 's,.*/netco/([^/]+)(/.*),\2,;s,.*/netco/([^/]+)$,/,'}
-	os -d^`{osdir} ssh $host cd $dir ';' $cmd
+	os -d^`{osdir} ssh -l apprun $host cd $dir ';' $cmd
 } {
 	os -d^`{osdir} $cmd
 }

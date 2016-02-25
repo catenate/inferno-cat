@@ -1,0 +1,5 @@
+#!/dis/sh
+# host id
+# host sudo id
+#flag x +
+host sudo $*
