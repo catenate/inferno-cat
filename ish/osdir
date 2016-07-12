@@ -5,17 +5,9 @@ if {no $1} {
 	dir = $emuroot^$1
 }
 
-user = `{echo $home | sed 's ^/usr/  '}
-gitco = ''
-if {~ $user 'apprun'} {gitco = '/home/apprun/gitco'}
-if {~ $user 'jcatena'} {gitco = '/usr/coinferno/gitco'}
-
 echo $dir | sed '
-s,^/usr/inferno/getco,/usr/coinferno/getco,
-s,^/usr/inferno/gitco,'^$gitco^',
 s,^/usr/inferno/github,/usr/coinferno/github,
-s,^/usr/inferno/gitorious,/usr/coinferno/gitorious,
-s,^/usr/inferno/netco,/usr/coinferno/netco,
+s,^/usr/inferno/gitlab,/usr/coinferno/gitlab,
+s,^/usr/inferno/tmg,/usr/coinferno/tmg,
 s,^/usr/inferno/n/local,,
-s,^/usr/inferno/sqlco,/usr/coinferno/sqlco,
 '

@@ -3,5 +3,4 @@ apply {
 	m = /tmp/$1.manos
 	if {! ftest -r $m} {os man $1 | os col -b > $m}
 	plumb $m
-	log manos $1
 } $*
