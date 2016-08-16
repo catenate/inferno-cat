@@ -10,6 +10,7 @@ du -n
 elapsed credo
 elapsed inferno-cat
 elapsed snack
+host which pnc
 log
 ls -F | mc
 ls -ltr /n/local/usr/inferno/dis/
@@ -17,6 +18,7 @@ mv /dis/switch .
 mv /gitco/build-systems/sh-inferno/watch .
 mv /gitco/notabene/sh-inferno/web .
 mv /n/local/usr/inferno/dis/python .
+mv pnc pnx
 nbnow
 whatis git
-whatis host
+whatis pnc

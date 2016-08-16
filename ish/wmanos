@@ -1,0 +1,6 @@
+#!/dis/sh
+flag x +
+apply {
+	man = $1
+	wm/man -f <{host zcat `{host man -w $man}} &
+} $*

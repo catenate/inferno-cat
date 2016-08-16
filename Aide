@@ -8,7 +8,7 @@ du | grep -v '\.git'
 gedit scratch
 git
 git add --all .
-git commit -a -m 'Update Aide file.'
+git commit -a -m 'Add browse to look at the current directory of files in a browser, to help get around Inferno’s cipboard problem.  Add pnx to touch, chmod +x, and plumb a new file (cf: New, Put, chmod +x).  Add wmanos to bring up host man pages in the Inferno man-page viewer.'
 git diff
 git diff --staged
 git log --decorate --graph --oneline --all | sed 10q
