@@ -1,0 +1,18 @@
+set -u
+self=$(basename $0)
+tmp=/tmp/${self}.$$
+trap 'rm -rf ${tmp}*' EXIT
+
+if test -r ${tmp}.out.old; then rm ${tmp}.out.old; fi
+touch ${tmp}.out.old
+
+while test -r ${tmp}.out.old; do
+	$* > ${tmp}.out.new 2>&1
+	if ! cmp ${tmp}.out.old ${tmp}.out.new >/dev/null 2>&1; then
+		date
+		diff ${tmp}.out.old ${tmp}.out.new
+		echo
+	fi
+	sleep 2
+	mv ${tmp}.out.new ${tmp}.out.old
+done

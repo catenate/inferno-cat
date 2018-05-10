@@ -1,0 +1,2 @@
+#!/dis/sh
+host aspell list | sort | host uniq -c | sort -n

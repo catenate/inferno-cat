@@ -1,0 +1,2 @@
+#!/dis/sh
+apply {git blame -e $1 >[2]/dev/null} $* | host cut -d'<' -f2 | host cut -d'>' -f1 | sed 's @backstopsolutions.com  ' | sort | host uniq -c | host sort -n -r

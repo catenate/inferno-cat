@@ -1,0 +1,3 @@
+for f in $*; do
+	git blame -e $f 2>/dev/null
+done | host cut -d'<' -f2 | host cut -d'>' -f1 | sed 's @backstopsolutions.com  ' | sort | uniq -c | sort -n -r

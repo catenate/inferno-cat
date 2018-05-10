@@ -1,0 +1,7 @@
+pid=$1
+shift
+
+field=$1
+shift
+
+ps aux | awk "\$2 ~ /$pid/ {print \$$field}"

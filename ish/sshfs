@@ -1,0 +1,13 @@
+#!/dis/sh
+#flag x +
+
+fqdn = $1
+host = `{echo $fqdn | sed 's \..*$  '}
+mnt = '/bsg/'^$host
+osmnt = '/usr/coinferno'^$mnt
+
+if {! ftest -d $mnt} {host mkdir $osmnt}
+
+echo sshfs 'jason.catena@'^$fqdn^':/' $osmnt
+#host sshfs 'jason.catena@'^$fqdn^':/' $osmnt
+#-o allow_other

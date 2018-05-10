@@ -1,0 +1,3 @@
+#!/dis/sh
+(du grep)=$*
+apply {grep -n $grep $1 /dev/null} `{du -n | grep -v '^modules/' | grep $du}
