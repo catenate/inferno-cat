@@ -1,0 +1,2 @@
+#!/dis/sh
+echo `{cat /mnt/acme/$acmewin/tag | sed 's, .*,,'} $* >>/tmp/marks
