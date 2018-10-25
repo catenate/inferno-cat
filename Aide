@@ -11,11 +11,12 @@ du | grep -v '\.git'
 gedit scratch
 git
 git add --all .
-git commit -a -m 'Assume we’re already where we want to be.'
+git commit -a -m 'Remove blank line.'
 git diff
 git diff --staged
 git log --decorate --graph --oneline --all | sed 10q
 git push origin master
+git show 85ad035
 log
 log git
 ls -F | mc
