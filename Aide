@@ -11,7 +11,7 @@ du | grep -v '\.git'
 gedit scratch
 git
 git add --all .
-git commit -a -m 'Clone or update git repo.'
+git commit -a -m 'Update Aide.'
 git diff
 git diff --staged
 git log --decorate --graph --oneline --all | sed 10q
