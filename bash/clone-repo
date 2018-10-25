@@ -14,8 +14,6 @@ else
 
 fi
 
-cd $selfdir
-
 if test -d $repo; then
 	cd $repo
 	git checkout $tag
