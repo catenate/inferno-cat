@@ -1,4 +1,5 @@
 #!/dis/sh
+#flag x +
 apply {
 	m = /tmp/$1.manos
 	if {! ftest -r $m} {os man $1 | os col -b > $m}

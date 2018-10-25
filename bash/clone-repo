@@ -1,0 +1,28 @@
+set -eu
+
+group=$1
+shift
+
+repo=$1
+shift
+
+if test $# -gt 0; then
+	tag=$1
+	shift
+else
+	tag=master
+
+fi
+
+cd $selfdir
+
+if test -d $repo; then
+	cd $repo
+	git checkout $tag
+	git fetch
+	git rebase origin/$tag
+else
+	git clone git@gitlab.backstop.solutions:${group}/${repo}.git $repo
+	cd $repo
+	git checkout $tag
+fi

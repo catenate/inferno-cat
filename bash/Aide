@@ -1,10 +1,15 @@
 Dump /github/inferno-cat/bash/dump
 Edit ,|sort|uniq
 Load /github/inferno-cat/bash/dump
-cp /n/local/home/apprun/bin/*emu* .
 cp -x /n/local/home/apprun/bin/ufs .
+cp /n/local/home/apprun/bin/*emu* .
 cp emubind2 inferno
 du -n
 log
 ls -F | mc
 nbnow
+self=$(basename $0)
+set -eux
+tmp=/tmp/$self.$$
+trap 'rm -rf ${tmp}*' EXIT HUP INT QUIT TERM
+host sh which_interpreter

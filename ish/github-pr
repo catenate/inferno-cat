@@ -1,0 +1,5 @@
+#!/dis/sh
+
+(user project n) = $*
+
+web 'https://github.com/'^$user^'/'^$project^'/pull/'^$n
