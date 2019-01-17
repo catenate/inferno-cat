@@ -15,9 +15,9 @@ cmd = $*
 if {no $cmd} {cmd = pwd}
 cwd = `{pwd}
 
-if {and {~ $cwd '*/bsg/*'} {~ $noremote 0}} {
-	host_name = `{echo $cwd | sed 's .*/bsg/([^/]+)/.* \1 ;s .*/bsg/([^/]+)$ \1 '}
-	host_dir = `{echo $cwd | sed 's .*/bsg/([^/]+)(/.*) \2 ;s .*/bsg/([^/]+)$ / '}
+if {and {~ $cwd '*/cx/*'} {~ $noremote 0}} {
+	host_name = `{echo $cwd | sed 's .*/cx/([^/]+)/.* \1 ;s .*/cx/([^/]+)$ \1 '}
+	host_dir = `{echo $cwd | sed 's .*/cx/([^/]+)(/.*) \2 ;s .*/cx/([^/]+)$ / '}
 	host_fqdn = `{os mount | grep $host_name | sed 's ^.*@  ;s :/.*$  '}
 	os -d^`{osdir} ssh -l jason.catena $host_fqdn cd $host_dir ';' $cmd
 } {

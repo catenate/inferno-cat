@@ -1,0 +1,8 @@
+set -eu
+
+commit=$1
+shift
+
+commits=$(git log --decorate --oneline --graph | grep "$commit" | field 2)
+
+mapex 'git diff-tree --no-commit-id --name-only -r $x' $commits | sort | uniq

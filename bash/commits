@@ -1,0 +1,6 @@
+set -eu
+
+commit=$1
+shift
+
+git log --decorate --oneline --graph | grep "$commit"

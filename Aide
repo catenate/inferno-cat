@@ -1,24 +1,39 @@
-	exit
-.
-Dump /github/inferno-cat/dump
-Edit ,|sort|uniq
-Load /github/inferno-cat/dump
-Mark catenate custom inferno
-cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
-du -n | grep -v '\.git' | grep Aide
-du -n | grep -v '\.git' | grep sh-inferno
-du | grep -v '\.git'
-gedit scratch
-git
-git add --all .
-git commit -a -m 'Remove blank line.'
-git diff
-git diff --staged
-git log --decorate --graph --oneline --all | sed 10q
-git push origin master
-git show 85ad035
-log
-log git
-ls -F | mc
-nsh git diff --staged
-web 'http://github.com/catenate/inferno-cat'
+change:
+	git
+	git add --all .
+	git diff
+	git diff --staged
+	nsh git diff --staged
+	
+commit:
+	git commit -a -m 'List commits and files changed by those commits.'
+
+dump:
+	Dump /github/inferno-cat/dump
+	Load /github/inferno-cat/dump
+	
+edit:
+	|sort|uniq
+	gedit scratch
+
+history:
+	git log --decorate --graph --oneline --all | sed 10q
+	git show 85ad035
+	log
+	log git
+
+origin:
+	git push origin master
+
+search:
+	Mark catenate custom inferno
+	du -n | grep -v '\.git' | grep Aide
+	du -n | grep -v '\.git' | grep sh-inferno
+	du | grep -v '\.git'
+	ls -F | mc
+
+wc:
+	cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
+
+web:
+	web 'http://github.com/catenate/inferno-cat'
