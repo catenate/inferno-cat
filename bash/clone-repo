@@ -19,7 +19,7 @@ if test -d $repo; then
 	git fetch
 	git rebase origin/$tag
 else
-	git clone git@gitlab.backstop.solutions:${group}/${repo}.git $repo
+	git clone git@github.com:${group}/${repo}.git $repo
 	cd $repo
 	git checkout $tag
 fi

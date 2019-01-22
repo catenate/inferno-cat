@@ -7,7 +7,6 @@ if {no $1} {
 
 echo $dir | sed '
 s,^/usr/inferno/github,/usr/coinferno/github,
-s,^/usr/inferno/gitlab,/usr/coinferno/gitlab,
-s,^/usr/inferno/gitcx,/usr/coinferno/gitcx,
+s,^/usr/inferno/seedcx,/usr/coinferno/seedcx,
 s,^/usr/inferno/n/local,,
 '

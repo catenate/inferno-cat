@@ -3,6 +3,6 @@ set -eu
 commit=$1
 shift
 
-commits=$(git log --decorate --oneline --graph | grep "$commit" | field 2)
+commits=$(git log --decorate --oneline | grep "$commit" | field 1)
 
 mapex 'git diff-tree --no-commit-id --name-only -r $x' $commits | sort | uniq

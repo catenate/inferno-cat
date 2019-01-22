@@ -6,7 +6,7 @@ change:
 	nsh git diff --staged
 	
 commit:
-	git commit -a -m 'Use catenate key.'
+	log commit git commit -a -m 'Revive log to capture host commands.'
 
 dump:
 	Dump /github/inferno-cat/dump

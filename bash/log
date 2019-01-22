@@ -1,0 +1,8 @@
+set -eu
+
+log=${1}.log
+shift
+
+echo "$@" >>$log
+
+"$@"
