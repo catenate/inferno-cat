@@ -3,6 +3,13 @@ set -eu
 log=${1}.log
 shift
 
-echo "$@" >>$log
+for x in "$@"; do
+	if test "$(echo $x | wc -w)" -gt 1; then
+		echo -n "'$x' " >>$log
+	else
+		echo -n "$x " >>$log
+	fi
+done
+echo >>$log
 
 "$@"
