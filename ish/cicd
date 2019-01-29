@@ -1,0 +1,5 @@
+#!/dis/sh
+self = $0
+self = `{echo $self | sed 's,.*/,,'}
+
+host $self $*

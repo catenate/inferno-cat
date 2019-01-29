@@ -1,8 +1,9 @@
 set -eu
 
-log=${1}.log
+log=/usr/inferno/log/${1}
 shift
 
+echo -n "cd $(pwd); " >>$log
 for x in "$@"; do
 	if test "$(echo $x | wc -w)" -gt 1; then
 		echo -n "'$x' " >>$log

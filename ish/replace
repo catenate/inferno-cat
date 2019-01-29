@@ -19,6 +19,11 @@ apply {
 	if {ftest -f $file} {
 		cp -x $file $file.${pid}
 		sed 's,'^$"old^','^$"new^',g' $file > $file.${pid}
-		mv $file.${pid} $file
+		if {~ $opt '-n'} {
+			diff $file $file.${pid}
+			rm $file.${pid}
+		} {
+			mv $file.${pid} $file
+		}
 	}
 } $files

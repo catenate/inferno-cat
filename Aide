@@ -1,3 +1,9 @@
+acme:
+	Edit X/inferno-cat/D
+
+aide:
+	grep -n ':$' Aide /dev/null | sed 's,: , ,g;s,:$, ,g' | fmt
+
 change:
 	git
 	git add --all .
@@ -6,7 +12,7 @@ change:
 	nsh git diff --staged
 	
 commit:
-	log commit git commit -a -m 'Quote parameters with more than one field.'
+	log github git commit -a -m 'Pass through cicd and github commands to host.  Add -n option to replace to test effect of substitution.'
 
 dump:
 	Dump /github/inferno-cat/dump
