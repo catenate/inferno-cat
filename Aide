@@ -12,7 +12,7 @@ change:
 	nsh git diff --staged
 	
 commit:
-	log github git commit -a -m 'Use alternate identities for different remotes.'
+	log github git commit -a -m 'Reconcile origin and catenate remotes.'
 
 dump:
 	Dump /github/inferno-cat/dump
@@ -28,16 +28,13 @@ history:
 	log
 	log git
 
-remote_origin:
-	log github git push catenate master
-	host key catenate
-
-remote_catenate:
+remote:
 	git remote
 	git remote add catenate catenate:catenate/inferno-cat.git
 	git remote get-url catenate
 	git remote remove catenate
 	git remote show catenate
+	log github git push catenate master
 
 search:
 	Mark catenate custom inferno
