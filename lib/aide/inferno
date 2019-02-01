@@ -1,0 +1,29 @@
+# |sort|uniq
+
+acme:
+	Edit X/$$1/D
+	Edit X/dis/D
+	Edit X/log/D
+	Load
+
+aide:
+	/lib/aide
+	du -n | grep '[Aa]ide'
+	grep -n ':$' Aide /dev/null | sed 's,: , ,g;s,:$, ,g' | fmt
+
+dump:
+	Dump /github/$$1/dump
+
+font:
+	/github/acme-fonts/test/1/acme/Font
+	/usr/jason/lib/wmsetup
+
+keyboard:
+	/emu/port/latin1.h
+	/lib/keyboard
+
+log:
+	/log
+
+wm:
+	/usr/jason/lib/wmsetup

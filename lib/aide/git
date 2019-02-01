@@ -1,0 +1,53 @@
+# |sort|uniq
+
+branch:
+	nsh git branch -a
+
+change:
+	git
+	git add --all .
+	git diff
+	git diff --staged
+	git | grep -v '^#' | cicd field 2
+	nsh git diff
+	nsh git diff --staged
+
+clone:
+	.git/info/exclude
+
+commit:
+	git log --decorate --oneline --graph -n 5
+	git log --decorate --oneline --graph --all -n 5
+	git show HEAD
+	log github git commit -a -m 'Add wrapper script pfsh to find bash scripts, and update Aide with remote-creation commands.'
+	log github git commit -a -m 'Update Aide.'
+
+config:
+	git config --get remote.origin.url
+
+github:
+	web 'github.com/$$1/$$2'
+
+push:
+	git fetch --all
+	log github git push c master
+	git rebase origin/master
+
+rebase:
+	git rebase --abort
+	git rebase --continue
+	git rebase --skip
+
+reflog:
+	git reflog | sed 5q
+	log $$1 git cherry-pick 0b0b7e7
+	log $$1 git reset --hard 'HEAD@{3}'
+	log $$1 git reset --hard HEAD
+	log $$1 git reset --hard $$2/$$3
+
+remote:
+	git remote
+	git remote add c catenate:catenate/$$1.git
+	git remote get-url c
+	git remote remove c
+	git remote show c

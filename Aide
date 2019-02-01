@@ -1,18 +1,20 @@
-acme:
-	Edit X/inferno-cat/D
-
-aide:
-	grep -n ':$' Aide /dev/null | sed 's,: , ,g;s,:$, ,g' | fmt
-
+|aide edit sort
+|aide git change
 change:
 	git
 	git add --all .
 	git diff
 	git diff --staged
+	git | grep -v '^#' | cicd field 2
+	nsh git diff
 	nsh git diff --staged
+
+|aide git commit
+|aide inferno acme inferno-cat
+|aide inferno aide
 	
 commit:
-	log github git commit -a -m 'Reconcile origin and catenate remotes.'
+	log github git commit -a -m 'Add a library of blocks of commands with parameter substitution.'
 
 dump:
 	Dump /github/inferno-cat/dump

@@ -1,0 +1,15 @@
+# |sort|uniq
+
+indent:
+	Edit s,^,	,g
+	Edit s,^	,,g
+
+replace:
+	nsh replace -n a b `{git grep -l '{{ a }}'}
+	replace a b `{git grep -l '{{ a }}'}
+
+sort:
+	|sort|uniq
+
+tr:
+	|tr A-Z a-z

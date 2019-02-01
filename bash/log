@@ -3,6 +3,11 @@ set -eu
 log=/usr/inferno/log/${1}
 shift
 
+if test $# -eq 0; then
+	cat $log
+	exit
+fi
+
 echo -n "cd $(pwd); " >>$log
 for x in "$@"; do
 	if test "$(echo $x | wc -w)" -gt 1; then
