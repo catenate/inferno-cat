@@ -8,6 +8,8 @@ acme:
 
 aide:
 	/lib/aide
+	Edit ,|sed '/^.*:$/,/^$/d'
+	Edit X/lib\/aide/D
 	du -n | grep '[Aa]ide'
 	grep -n ':$' Aide /dev/null | sed 's,: , ,g;s,:$, ,g' | fmt
 
@@ -24,6 +26,12 @@ keyboard:
 
 log:
 	/log
+
+path:
+	cicd which $$1
+	github which $$1
+	host which $$1
+	whatis $$1
 
 wm:
 	/usr/jason/lib/wmsetup

@@ -1,0 +1,4 @@
+# |sort|uniq
+
+doc:
+	web 'https://docs.ansible.com/ansible/latest/index.html'

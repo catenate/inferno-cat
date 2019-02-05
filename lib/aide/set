@@ -1,0 +1,14 @@
+git:
+	|aide git change
+	|aide git remote $repo
+
+inferno:
+	|aide inferno acme $dir
+	|aide inferno aide
+	|aide inferno log
+
+up:
+	|aide edit indent
+	|aide edit sort
+	|aide set git
+	|aide set inferno

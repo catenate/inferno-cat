@@ -1,0 +1,15 @@
+header:
+	cicd pastout $$1
+	tail -f log/$$1.test.out
+	
+	regress skip
+	
+		> set -eux
+	
+		> echo done
+
+regress:
+	log $$1 regress
+
+self:
+	|aide testsh header $% |sed 's,^	,,'

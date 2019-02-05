@@ -1,0 +1,5 @@
+format:
+	| xmlstarlet fo
+
+select:
+	| xmlstarlet sel -t -v '/executions/execution/@id'

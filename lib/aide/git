@@ -1,5 +1,10 @@
 # |sort|uniq
 
+aide:
+	/github/inferno-cat/lib/aide
+	du -n /github | grep '/Aide$'
+	ls /github/*/Aide
+
 branch:
 	nsh git branch -a
 
@@ -19,19 +24,21 @@ commit:
 	git log --decorate --oneline --graph -n 5
 	git log --decorate --oneline --graph --all -n 5
 	git show HEAD
-	log github git commit -a -m 'Add wrapper script pfsh to find bash scripts, and update Aide with remote-creation commands.'
+	log github git commit -a -m ''
 	log github git commit -a -m 'Update Aide.'
 
 config:
 	git config --get remote.origin.url
+	git config --global user.email 'jason.catena@seedcx.com'
+	git config --global user.name 'Jason Catena'
 
 github:
 	web 'github.com/$$1/$$2'
 
 push:
 	git fetch --all
+	git rebase c/master
 	log github git push c master
-	git rebase origin/master
 
 rebase:
 	git rebase --abort

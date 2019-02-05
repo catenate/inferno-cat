@@ -1,8 +1,14 @@
 # |sort|uniq
 
+comment:
+	Edit s,^,#,g
+	Edit s,^#,,g
+
 indent:
-	Edit s,^,	,g
 	Edit s,^	,,g
+	Edit s,^,	,g
+	|sed 's,^	,,'
+	|sed 's,^,	,'
 
 replace:
 	nsh replace -n a b `{git grep -l '{{ a }}'}

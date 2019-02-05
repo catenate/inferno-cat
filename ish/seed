@@ -1,0 +1,3 @@
+#!/dis/sh
+
+apply {host jira seed $1} $*
