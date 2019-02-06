@@ -1,14 +1,16 @@
 pid=$$
+trap 'rm -rf watch.*.${pid}' EXIT HUP INT QUIT TERM
+
 if test -r watch.out.old.$pid; then rm watch.out.old.$pid; fi
 touch watch.out.old.$pid
 
 while test -r watch.out.old.$pid; do
 	$* > watch.out.new.$pid 2>&1
-	if ! cmp watch.out.old.$pid watch.out.new.$pid; then
-		date >> watch.log.$pid
-		diff watch.out.old.$pid watch.out.new.$pid >> watch.log.$pid
-		echo >> watch.log.$pid
+	if ! cmp watch.out.old.$pid watch.out.new.$pid >/dev/null 2>&1; then
+		date
+		diff watch.out.old.$pid watch.out.new.$pid
+		echo
 	fi
-	sleep 2
 	mv watch.out.new.$pid watch.out.old.$pid
+	sleep 2
 done

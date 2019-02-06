@@ -10,11 +10,13 @@ change:
 	nsh git diff --staged
 
 |aide git commit
+|aide git push
+|aide git remote inferno-cat
 |aide inferno acme inferno-cat
 |aide inferno aide
-	
+
 commit:
-	log github git commit -a -m 'Add a library of blocks of commands with parameter substitution.'
+	log github git commit -a -m 'Adjust the watch to work better in a window.'
 
 dump:
 	Dump /github/inferno-cat/dump

@@ -16,6 +16,12 @@ aide:
 dump:
 	Dump /github/$$1/dump
 
+file:
+	chmod +x
+	ls -l
+	mkdir
+	rm --
+
 font:
 	/github/acme-fonts/test/1/acme/Font
 	/usr/jason/lib/wmsetup
@@ -32,6 +38,9 @@ path:
 	github which $$1
 	host which $$1
 	whatis $$1
+
+plumb:
+	apply {plumb $1} `{ls}
 
 wm:
 	/usr/jason/lib/wmsetup

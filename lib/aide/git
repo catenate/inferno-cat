@@ -32,6 +32,9 @@ config:
 	git config --global user.email 'jason.catena@seedcx.com'
 	git config --global user.name 'Jason Catena'
 
+file:
+	git rm
+
 github:
 	web 'github.com/$$1/$$2'
 
