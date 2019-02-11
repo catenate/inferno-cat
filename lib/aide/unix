@@ -1,0 +1,11 @@
+file:
+	chmod +x
+	diff $$1 $$2
+	ls -l
+	mkdir
+	rm --
+
+man:
+	host man $$1
+	manos $$1
+

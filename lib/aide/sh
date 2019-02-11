@@ -1,5 +1,8 @@
+# |sort|uniq
+
 header:
-	set -eux
+	set -efux
+	set -o pipefail
 	self=$(basename $0)
 	selfdir=$(dirname $0)
 	tmp=/tmp/$self.$$
@@ -7,3 +10,4 @@ header:
 
 self:
 	|aide sh header |sed 's,^	,,'
+

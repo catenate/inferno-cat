@@ -10,6 +10,7 @@ aide:
 	/lib/aide
 	Edit ,|sed '/^.*:$/,/^$/d'
 	Edit X/lib\/aide/D
+	Edit |sed '/^[^ ]+ [^ ]+ [^ ]+$/s ^ # '
 	du -n | grep '[Aa]ide'
 	grep -n ':$' Aide /dev/null | sed 's,: , ,g;s,:$, ,g' | fmt
 
@@ -17,10 +18,7 @@ dump:
 	Dump /github/$$1/dump
 
 file:
-	chmod +x
-	ls -l
-	mkdir
-	rm --
+	pnx $$1
 
 font:
 	/github/acme-fonts/test/1/acme/Font

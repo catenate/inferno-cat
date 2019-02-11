@@ -1,9 +1,9 @@
 git:
 	|aide git change
-	|aide git remote $repo
+	|aide git remote -S
 
 inferno:
-	|aide inferno acme $dir
+	|aide inferno acme -S
 	|aide inferno aide
 	|aide inferno log
 

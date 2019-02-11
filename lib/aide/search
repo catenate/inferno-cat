@@ -1,0 +1,11 @@
+# |sort|uniq
+
+file:
+	du -n
+	du -n | grep $$1
+	apply {grep -n $$2 $1 /dev/null >[2]/dev/null} `{du -n | grep $$1}
+
+git:
+	git grep -n $$1 $$2 $$3 $$4 $$5 $$6 $$7 $$8 $$9
+	nsh git grep -n $$1 $$2 $$3 $$4 $$5 $$6 $$7 $$8 $$9
+

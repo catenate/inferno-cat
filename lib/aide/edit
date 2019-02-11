@@ -4,6 +4,9 @@ comment:
 	Edit s,^,#,g
 	Edit s,^#,,g
 
+gedit:
+	host gedit scratch
+
 indent:
 	Edit s,^	,,g
 	Edit s,^,	,g

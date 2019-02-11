@@ -1,21 +1,19 @@
 |aide edit sort
 |aide git change
 |aide git commit
+commit:
+	git show HEAD
+	log github git commit -a -m 'Aide -S does not do any substitution.  Clean up nsh cases.  Many aide changes.'
+	log github git commit -a -m 'Update Aide.'
+
 |aide git push
 |aide git remote inferno-cat
 |aide inferno acme inferno-cat
 |aide inferno aide
 
-commit:
-	log github git commit -a -m 'Adjust the watch to work better in a window.'
-
 dump:
 	Dump /github/inferno-cat/dump
 	Load /github/inferno-cat/dump
-	
-edit:
-	|sort|uniq
-	gedit scratch
 
 history:
 	git log --decorate --graph --oneline --all | sed 10q

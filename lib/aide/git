@@ -21,8 +21,6 @@ clone:
 	.git/info/exclude
 
 commit:
-	git log --decorate --oneline --graph -n 5
-	git log --decorate --oneline --graph --all -n 5
 	git show HEAD
 	log github git commit -a -m ''
 	log github git commit -a -m 'Update Aide.'
@@ -33,10 +31,15 @@ config:
 	git config --global user.name 'Jason Catena'
 
 file:
-	git rm
+	git mv $$1 $$2
+	git rm $$1
 
 github:
 	web 'github.com/$$1/$$2'
+
+log:
+	git log --decorate --oneline --graph -n 5 $$1
+	git log --decorate --oneline --graph --all -n 5 $$1
 
 push:
 	git fetch --all
@@ -51,6 +54,7 @@ rebase:
 reflog:
 	git reflog | sed 5q
 	log $$1 git cherry-pick 0b0b7e7
+	log $$1 git checkout -- $$2
 	log $$1 git reset --hard 'HEAD@{3}'
 	log $$1 git reset --hard HEAD
 	log $$1 git reset --hard $$2/$$3
@@ -61,3 +65,8 @@ remote:
 	git remote get-url c
 	git remote remove c
 	git remote show c
+
+rev-parse:
+	git rev-parse --is-inside-work-tree
+	git rev-parse --show-toplevel
+

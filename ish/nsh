@@ -1,6 +1,6 @@
 #!/dis/sh
+
 (cmd args) = $*
-if {no $cmd} {echo $cmd $args; exit 0}
-if {ftest -f ./$cmd} {new sh ./$cmd $args; exit 0}
-if {ftest -f /dis/$cmd} {new sh /dis/$cmd $args; exit 0}
-if {ftest -f /dis/$cmd.dis} {new $cmd $args; exit 0}
+if {no $cmd} {exit 0}
+if {ftest -f '/dis/'^$cmd} {new sh '/dis/'^$cmd $args; exit 0}
+if {ftest -f '/dis/'^$cmd^'.dis'} {new $cmd $args; exit 0}
