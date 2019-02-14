@@ -1,0 +1,7 @@
+cicd which $$1
+github which $$1
+host ./path env | grep '^PATH='
+host ./path which hub
+host which $$1
+whatis $$1
+

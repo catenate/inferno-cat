@@ -1,0 +1,4 @@
+touch /n/local/tmp/xclip
+host xclip -i /tmp/xclip
+host xclip -o
+

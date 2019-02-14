@@ -1,0 +1,7 @@
+host kill 18958 18959
+host ps aux | grep watch
+nsh github watch ls
+rm this
+rm watch.out.old.*
+touch this
+

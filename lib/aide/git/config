@@ -1,0 +1,4 @@
+git config --get remote.origin.url
+git config --global user.email 'jason.catena@seedcx.com'
+git config --global user.name 'Jason Catena'
+

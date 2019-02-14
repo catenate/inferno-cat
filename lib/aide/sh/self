@@ -1,0 +1,2 @@
+|aide sh header |sed 's,^	,,'
+

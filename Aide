@@ -3,31 +3,18 @@
 |aide git commit
 commit:
 	git show HEAD
-	log github git commit -a -m 'Aide -S does not do any substitution.  Clean up nsh cases.  Many aide changes.'
+	log github git commit -a -m 'In Inferno, everything is a file.'
 	log github git commit -a -m 'Update Aide.'
 
 |aide git push
 |aide git remote inferno-cat
 |aide inferno acme inferno-cat
+Edit X/inferno-cat/D
+Edit X/dis/D
+Edit X/log/D
+Load
+
 |aide inferno aide
-
-dump:
-	Dump /github/inferno-cat/dump
-	Load /github/inferno-cat/dump
-
-history:
-	git log --decorate --graph --oneline --all | sed 10q
-	git show 85ad035
-	log
-	log git
-
-remote:
-	git remote
-	git remote add catenate catenate:catenate/inferno-cat.git
-	git remote get-url catenate
-	git remote remove catenate
-	git remote show catenate
-	log github git push catenate master
 
 search:
 	Mark catenate custom inferno
@@ -38,6 +25,3 @@ search:
 
 wc:
 	cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
-
-web:
-	web 'http://github.com/catenate/inferno-cat'

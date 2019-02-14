@@ -1,0 +1,5 @@
+cp /n/local/home/jason/Downloads/$$1.tar .
+nsh host tar tf $$1.tar
+host tar cf $$1.tar
+host tar xf $$1.tar
+

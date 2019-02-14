@@ -1,4 +1,0 @@
-# |sort|uniq
-
-update:
-	nsh host sudo apt-get update	# after changing apt sources list

@@ -1,0 +1,5 @@
+Edit s,^	,,g
+Edit s,^,	,g
+|sed 's,^	,,'
+|sed 's,^,	,'
+

@@ -1,0 +1,3 @@
+git grep -l 'regress skip'
+log $$1 regress
+

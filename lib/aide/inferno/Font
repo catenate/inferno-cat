@@ -1,0 +1,13 @@
+Font /fonts/10646/9x15/9x15.font	# dot-matrix printer, !unicode
+Font /fonts/lucida/unicode.10.font 	# big
+Font /fonts/lucida/unicode.20.font 	# over shoulder
+Font /fonts/lucida/unicode.32.font 	# across the room
+Font /fonts/lucidasans/unicode.6.font	# overview code
+Font /fonts/vera/Vera/9x15.14.font 	# edit files
+Font /fonts/vera/Vera/unicode.14.font 	# default font
+Font /fonts/vera/Vera/unimono.14.font	# 9x15.font fill
+Font /fonts/vera/vera/vera.14.font
+Font /fonts/vera/vera/vera.16.font
+Font /fonts/vera/veramono/veramono.10.font	# default tiny review
+Font /fonts/vera/veramono/veramono.14.font	# +mono, -unicode
+

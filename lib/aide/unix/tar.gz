@@ -1,0 +1,5 @@
+cp /n/local/home/jason/Downloads/$$1.tar.gz .
+host gzip -d $$1.tar.gz
+host tar czf $$1.tar.gz
+host tar xzf $$1.tar.gz
+

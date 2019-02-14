@@ -1,0 +1,4 @@
+git fetch --all
+git rebase c/master
+log github git push c master
+

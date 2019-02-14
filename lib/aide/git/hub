@@ -1,0 +1,3 @@
+host hub --help
+web 'https://github.com/github/hub/releases'
+

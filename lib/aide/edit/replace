@@ -1,0 +1,3 @@
+nsh replace -n a b `{git grep -l '{{ a }}'}
+replace a b `{git grep -l '{{ a }}'}
+

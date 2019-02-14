@@ -1,0 +1,8 @@
+chmod +x
+ls -F
+ls -l
+ls -tr
+mkdir
+nsh diff $$1 $$2
+rm --
+

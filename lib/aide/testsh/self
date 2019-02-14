@@ -1,0 +1,2 @@
+|aide testsh header $% |sed 's,^	,,'
+

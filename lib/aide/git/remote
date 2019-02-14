@@ -1,0 +1,6 @@
+git remote
+git remote add c catenate:catenate/$$1.git
+git remote get-url c
+git remote remove c
+git remote show c
+

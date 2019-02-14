@@ -1,0 +1,4 @@
+/github/inferno-cat/lib/aide
+du -n /github | grep '/Aide$'
+ls /github/*/Aide
+

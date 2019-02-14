@@ -1,0 +1,9 @@
+cicd pastout $$1
+tail -f log/$$1.test.out
+
+regress skip
+
+> set -efux
+
+> echo done
+

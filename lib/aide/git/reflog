@@ -1,0 +1,7 @@
+git reflog | sed 5q
+log $$1 git cherry-pick 0b0b7e7
+log $$1 git checkout -- $$2
+log $$1 git reset --hard 'HEAD@{3}'
+log $$1 git reset --hard HEAD
+log $$1 git reset --hard $$2/$$3
+

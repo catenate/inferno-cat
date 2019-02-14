@@ -1,0 +1,6 @@
+	make> test:
+	make> 	pwd
+host cicd lit 'make -f Aide.make pwd' Aide
+host cicd lit 'make -f mk.make pwd' mk
+host make -f /usr/coinferno/github/inferno-cat/lib/aide/mk pwd
+mk -f /lib/aide/mk pwd
