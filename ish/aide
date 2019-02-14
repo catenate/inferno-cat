@@ -17,7 +17,7 @@ if {no $S9} {S9=''}
 echo '|aide' $file $section $S1 $S2 $S3 $S4 $S5 $S6 $S7 $S8 $S9 | sed 's, *$,,g'
 
 if {no $section} {
-	apply {echo '|aide '^$file^' '^$1 | sed 's, *$, -S,g'} `{ls $pathfile}
+	apply {echo '|aide '^$file^' '^$1 | sed 's, *$, -S,g'} `{cd $pathfile; ls}
 } {
 	if {~ $S1 '-S'} {
 		cat $pathfile/$section

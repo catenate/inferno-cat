@@ -1,9 +1,17 @@
 |aide edit sort
 |aide git change
+git
+git add --all .
+git diff
+git diff --staged
+git | grep -v '^#' | cicd field 2
+nsh git diff
+nsh git diff --staged
+
 |aide git commit
 commit:
 	git show HEAD
-	log github git commit -a -m 'Cleaner cleanup commands.'
+	log github git commit -a -m 'Just the names of the sections, not the paths.'
 	log github git commit -a -m 'Update Aide.'
 
 |aide git push
