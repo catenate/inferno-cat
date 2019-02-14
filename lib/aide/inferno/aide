@@ -1,5 +1,6 @@
 /lib/aide
 Edit ,|grep '^\|aide '
+Edit ,|grep -v ' -S$'
 Edit X/lib\/aide/D
 Edit |sed '/^[^ ]+ [^ ]+ [^ ]+$/s ^ # '
 du -n | grep '[Aa]ide'

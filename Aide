@@ -3,10 +3,14 @@
 |aide git commit
 commit:
 	git show HEAD
-	log github git commit -a -m 'In Inferno, everything is a file.'
+	log github git commit -a -m 'Cleaner cleanup commands.'
 	log github git commit -a -m 'Update Aide.'
 
 |aide git push
+git fetch --all
+git rebase c/master
+log github git push c master
+
 |aide git remote inferno-cat
 |aide inferno acme inferno-cat
 Edit X/inferno-cat/D
