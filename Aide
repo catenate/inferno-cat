@@ -1,39 +1,12 @@
 |aide edit sort
 |aide git change
-git
-git add --all .
-git diff
-git diff --staged
-git | grep -v '^#' | cicd field 2
-nsh git diff
-nsh git diff --staged
-
 |aide git commit
-commit:
-	git show HEAD
-	log github git commit -a -m 'Just the names of the sections, not the paths.'
-	log github git commit -a -m 'Update Aide.'
+git show HEAD
+log github git commit -a -m 'aide -x executes the substituted script'
+log github git commit -a -m 'Update Aide.'
 
 |aide git push
-git fetch --all
-git rebase c/master
-log github git push c master
-
 |aide git remote inferno-cat
 |aide inferno acme inferno-cat
-Edit X/inferno-cat/D
-Edit X/dis/D
-Edit X/log/D
-Load
-
 |aide inferno aide
-
-search:
-	Mark catenate custom inferno
-	du -n | grep -v '\.git' | grep Aide
-	du -n | grep -v '\.git' | grep sh-inferno
-	du | grep -v '\.git'
-	ls -F | mc
-
-wc:
-	cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
+|aide search git -S

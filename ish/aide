@@ -1,6 +1,10 @@
 #!/dis/sh
 
-(file section S1 S2 S3 S4 S5 S6 S7 S8 S9) = $*
+if {~ $1 '-x'} {
+	(opt file section S1 S2 S3 S4 S5 S6 S7 S8 S9) = $*
+} {
+	(file section S1 S2 S3 S4 S5 S6 S7 S8 S9) = $*
+}
 
 pathfile='/lib/aide/'^$file
 
@@ -14,7 +18,11 @@ if {no $S7} {S7=''}
 if {no $S8} {S8=''}
 if {no $S9} {S9=''}
 
-echo '|aide' $file $section $S1 $S2 $S3 $S4 $S5 $S6 $S7 $S8 $S9 | sed 's, *$,,g'
+if {no $opt} {
+	echo '|aide' $file $section $S1 $S2 $S3 $S4 $S5 $S6 $S7 $S8 $S9 | sed 's, *$,,g'
+}
+
+if {! test -d $pathfile} {exit 0}
 
 if {no $section} {
 	apply {echo '|aide '^$file^' '^$1 | sed 's, *$, -S,g'} `{cd $pathfile; ls}
@@ -22,6 +30,10 @@ if {no $section} {
 	if {~ $S1 '-S'} {
 		cat $pathfile/$section
 	} {
-		cat $pathfile/$section | sed 's \$\$1 '^$S1^' g;s \$\$2 '^$S2^' g;s \$\$3 '^$S3^' g;s \$\$4 '^$S4^' g;s \$\$5 '^$S5^' g;s \$\$6 '^$S6^' g;s \$\$7 '^$S7^' g;s \$\$8 '^$S8^' g;s \$\$9 '^$S9^' g;' | sed 's, *$,,g'
+		if {~ $opt '-x'} {
+			cat $pathfile/$section | sed 's \$\$1 '^$S1^' g;s \$\$2 '^$S2^' g;s \$\$3 '^$S3^' g;s \$\$4 '^$S4^' g;s \$\$5 '^$S5^' g;s \$\$6 '^$S6^' g;s \$\$7 '^$S7^' g;s \$\$8 '^$S8^' g;s \$\$9 '^$S9^' g;' | sed 's, *$,,g' | sh
+		} {
+			cat $pathfile/$section | sed 's \$\$1 '^$S1^' g;s \$\$2 '^$S2^' g;s \$\$3 '^$S3^' g;s \$\$4 '^$S4^' g;s \$\$5 '^$S5^' g;s \$\$6 '^$S6^' g;s \$\$7 '^$S7^' g;s \$\$8 '^$S8^' g;s \$\$9 '^$S9^' g;' | sed 's, *$,,g'
+		}
 	}
 }

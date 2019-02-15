@@ -1,0 +1,1 @@
+cat sh-inferno/* | grep -v '^[	 }{]*$' | grep -v '^[	 ]*#' |  wc -l
