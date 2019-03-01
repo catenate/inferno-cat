@@ -1,0 +1,7 @@
+web 'https://rundeck.github.io/rundeck-cli/install/'
+echo 'deb https://dl.bintray.com/rundeck/rundeck-deb /' | sudo tee -a /etc/apt/sources.list
+curl 'https://bintray.com/user/downloadSubjectPublicKey?username=bintray' > /tmp/bintray.gpg.key
+sudo apt-key add - < /tmp/bintray.gpg.key
+sudo apt-get -y install apt-transport-https
+sudo apt-get -y update
+sudo apt-get -y install rundeck-cli

@@ -1,5 +1,13 @@
 |aide edit sort
 |aide git change
+git
+git add --all .
+git diff
+git diff --staged
+git | grep -v '^#' | cicd field 2
+nsh git diff
+nsh git diff --staged
+
 |aide git commit
 |aide git push
 |aide git remote inferno-cat

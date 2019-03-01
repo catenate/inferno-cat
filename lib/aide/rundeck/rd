@@ -1,0 +1,13 @@
+host rd --help
+host rd run help
+nsh host rd help
+nsh host rd jobs disable help
+nsh host rd jobs enable help
+nsh host rd jobs help
+nsh host rd jobs info help
+nsh host rd jobs list help
+nsh host rd scheduler help
+nsh host rd scheduler jobs
+nsh host rd scheduler jobs help
+web 'https://github.com/rundeck/rundeck-cli/blob/master/docs/commands.md'
+

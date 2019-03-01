@@ -1,4 +1,4 @@
 git show HEAD
-log github git commit -a -m ''
-log github git commit -a -m 'Update Aide.'
+git commit -a -m ''
+git commit -a -m 'Update Aide.'
 
