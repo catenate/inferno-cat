@@ -1,3 +1,5 @@
 host hub --help
+nsh host ./hub help
+nsh host ./hub help clone
 web 'https://github.com/github/hub/releases'
 

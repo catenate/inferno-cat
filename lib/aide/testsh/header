@@ -3,7 +3,8 @@ tail -f log/$$1.test.out
 
 regress skip
 
-> set -efux
+	> set -efux
+	> set -o pipefail
 
-> echo done
+	> echo done
 

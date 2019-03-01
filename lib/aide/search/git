@@ -1,4 +1,6 @@
-du -n | grep -v '\.git' | grep $$1
+apply {grep -n -i '$$1' $1 /dev/null} `{du -n | grep '$$2'}
+du -n | grep -v '\.git' | grep -i $$1 $$2 $$3 $$4 $$5 $$6 $$7 $$8 $$9
 du | grep -v '\.git'
-git grep -n $$1 $$2 $$3 $$4 $$5 $$6 $$7 $$8 $$9
-nsh git grep -n $$1 $$2 $$3 $$4 $$5 $$6 $$7 $$8 $$9
+nsh git grep -n -i $$1 $$2 $$3 $$4 $$5 $$6 $$7 $$8 $$9
+nsh grep -n -i $$1 * */* */*/*
+

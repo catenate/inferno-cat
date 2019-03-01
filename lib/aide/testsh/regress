@@ -1,3 +1,4 @@
 git grep -l 'regress skip'
-log $$1 regress
+grep -n 'in serial' regress.out /dev/null
+log $$1 regress >regress.out
 

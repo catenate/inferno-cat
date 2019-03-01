@@ -1,21 +1,38 @@
-set -eu
+set -efu
+selfdir=$(dirname $0)
 
-log=/usr/inferno/log/${1}
-shift
-
-if test $# -eq 0; then
-	cat $log
-	exit
-fi
-
-echo -n "cd $(pwd); " >>$log
-for x in "$@"; do
-	if test "$(echo $x | wc -w)" -gt 1; then
-		echo -n "'$x' " >>$log
+for arg in "$@"; do
+	if echo "$arg" | grep '=' >/dev/null 2>&1; then
+		arg_name=$(echo $arg | sed 's =.*  ')
+		arg_value=$(echo $arg | sed 's ^[^=]*=  ')
+		eval ${arg_name}='${arg_value}'
+		shift
 	else
-		echo -n "$x " >>$log
+		break
 	fi
 done
-echo >>$log
 
-"$@"
+set=${set-}
+if test -n "$set"; then
+	set $set
+fi
+
+logdir=${selfdir}/logs
+log=${log:-$1}
+
+logfile=${logdir}/${log}
+
+if ! test -d $logdir; then
+	mkdir -p $logdir
+fi
+
+echo -n "$(date)	$(pwd)	" >>$logfile
+
+for x in "$@"; do
+	if test "$(echo $x | wc -w)" -gt 1; then
+		echo -n "'$x' " >>$logfile
+	else
+		echo -n "$x " >>$logfile
+	fi
+done
+echo "" >>$logfile

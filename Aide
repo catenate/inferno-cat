@@ -1,12 +1,7 @@
 |aide edit sort
 |aide git change
 |aide git commit
-git show HEAD
-log github git commit -a -m 'aide -x executes the substituted script'
-log github git commit -a -m 'Update Aide.'
-
 |aide git push
 |aide git remote inferno-cat
 |aide inferno acme inferno-cat
 |aide inferno aide
-|aide search git -S
