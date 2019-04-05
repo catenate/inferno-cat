@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+dir=$(dirname "$(readlink -f $0)")
+if ! echo $dir | grep '^/' >/dev/null; then
+	dir=$(pwd)/$dir
+fi
+
+cwd=$(pwd)
+cd $dir
+export pfsh=$(pwd)
+cd $cwd
+
+if test -r $dir/path.dir; then
+	dirs="$(echo $(sed s,^,$dir/, $dir/path.dir))"
+else
+	dirs=$(find $dir -type d | sort | grep -v '/\.git' | grep -v '/mock')
+fi
+
+for d in $dirs; do
+	cd $d
+	minpaths=$minpaths:$(pwd)
+	cd $cwd
+done
+
+minpaths=$(echo $minpaths | sed 's,^:,,')
+export PATH=$minpaths:$PATH
+
+"$@"

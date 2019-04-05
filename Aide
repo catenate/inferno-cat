@@ -9,7 +9,7 @@
 Edit |sort|uniq
 git
 git add --all .
-git commit -a -m 'Remove blank line.'
+git commit -a -m 'Add run scripts icat and path.'
 git commit -a -m 'Update Aide file.'
 git diff
 git diff --staged

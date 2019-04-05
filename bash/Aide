@@ -1,6 +1,9 @@
 Dump /github/inferno-cat/bash/dump
 Edit ,|sort|uniq
 Load /github/inferno-cat/bash/dump
+cp -x icat /n/local/home/jdc/bin
+cp -x /github/orchestra/path path
+cp -x /n/local/home/jdc/bin/orch icat
 cp -x /n/local/home/apprun/bin/ufs .
 cp /n/local/home/apprun/bin/*emu* .
 cp emubind2 inferno
@@ -13,3 +16,5 @@ set -eux
 tmp=/tmp/$self.$$
 trap 'rm -rf ${tmp}*' EXIT HUP INT QUIT TERM
 host sh which_interpreter
+host ./path which log
+host ./icat which log
