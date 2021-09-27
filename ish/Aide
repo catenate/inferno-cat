@@ -21,4 +21,4 @@ mv /n/local/usr/inferno/dis/python .
 mv pnc pnx
 nbnow
 whatis git
-whatis pnc
+whatis mc

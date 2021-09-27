@@ -1,4 +1,4 @@
 git fetch --all
-git rebase c/master
-git push c master
+git push $$1 master
+git rebase $$1/master
 

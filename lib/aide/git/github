@@ -1,2 +1,4 @@
+apply {d=$1; echo $d^'/Aide'; cd $d; git; cd ..; echo} `{ls -d * | grep -v Aide}
+git clone git@github.com:$$1/$$2.git $$2
 web 'github.com/$$1/$$2'
 

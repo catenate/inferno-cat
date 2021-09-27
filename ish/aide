@@ -19,13 +19,13 @@ if {no $S8} {S8=''}
 if {no $S9} {S9=''}
 
 if {no $opt} {
-	echo '|aide' $file $section $S1 $S2 $S3 $S4 $S5 $S6 $S7 $S8 $S9 | sed 's, *$,,g'
+	echo '	|aide' $file $section $S1 $S2 $S3 $S4 $S5 $S6 $S7 $S8 $S9 | sed 's, *$,,g'
 }
 
 if {! test -d $pathfile} {exit 0}
 
 if {no $section} {
-	apply {echo '|aide '^$file^' '^$1 | sed 's, *$, -S,g'} `{cd $pathfile; ls}
+	apply {echo '	|aide '^$file^' '^$1 | sed 's, *$, -S,g'} `{cd $pathfile; ls}
 } {
 	if {~ $S1 '-S'} {
 		cat $pathfile/$section

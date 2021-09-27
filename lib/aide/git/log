@@ -1,3 +1,2 @@
 git log --decorate --oneline --graph -n 5 $$1
 git log --decorate --oneline --graph --all -n 5 $$1
-

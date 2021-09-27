@@ -1,3 +1,4 @@
+git rev-parse --abbrev-ref HEAD
 git rev-parse --is-inside-work-tree
-git rev-parse --show-toplevel
+basename `{git rev-parse --show-toplevel}
 

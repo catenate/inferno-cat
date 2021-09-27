@@ -1,3 +1,4 @@
 #!/dis/sh
 if {no $*} {web news.ycombinator.com; exit 0}
-apply {os -d`{osdir} google-chrome $"1} $*
+#apply {os -d`{osdir} google-chrome $"1} $*
+apply {os -d`{osdir} firefox $"1} $*

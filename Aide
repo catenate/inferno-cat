@@ -1,30 +1,22 @@
-|aide edit sort
-|aide git change
-|aide git commit
-|aide git push
-|aide git remote inferno-cat
-|aide inferno acme inferno-cat
-|aide inferno aide
-
-Edit |sort|uniq
+	git reset --hard HEAD
+	git show 85ad035
+	os -d^`{osdir} ssh -l apprun $host cd $dir ';' $cmdos -d^`{osdir} ssh -l apprun $host cd $dir ';' $cmd
+	web 'http://github.com/catenate/inferno-cat'
+	web http://github.com/catenate/inferno-cat
+	|aide edit sort
+	|aide git change
 git
 git add --all .
-git commit -a -m 'Add run scripts icat and path.'
-git commit -a -m 'Update Aide file.'
 git diff
 git diff --staged
-git fetch
-git log --decorate --graph --oneline --all | sed 10q
-git push origin master
-git rebase origin/master
-git reset --hard HEAD
-git show 85ad035
 git | grep -v '^#' | cicd field 2
-log
-log git
-ls -F | mc
 nsh git diff
 nsh git diff --staged
-os -d^`{osdir} ssh -l apprun $host cd $dir ';' $cmdos -d^`{osdir} ssh -l apprun $host cd $dir ';' $cmd
-web 'http://github.com/catenate/inferno-cat'
-web http://github.com/catenate/inferno-cat
+
+	|aide git commit
+	|aide git log
+	|aide git reflog icat
+	|aide git push c
+	|aide git push origin
+	|aide git remote inferno-cat
+	|aide inferno aide

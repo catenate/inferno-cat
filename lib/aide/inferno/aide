@@ -1,6 +1,7 @@
 /github/inferno-cat/lib/aide
 /lib/aide
 Edit ,|grep '^\|aide ' | sort | uniq
+Edit ,|grep '^[ 	]+' | sort | uniq
 Edit ,|grep -v ' -S$'
 Edit X/lib\/aide/D
 Edit |sed '/^[^ ]+ [^ ]+ [^ ]+$/s ^ # '

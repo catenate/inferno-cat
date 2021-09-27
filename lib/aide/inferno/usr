@@ -1,0 +1,2 @@
+/n/local/home/jdc
+cp -r -x /usr/inferno /usr/$$1

@@ -1,5 +1,6 @@
 chmod +x
 ls -F
+ls -F | mc
 ls -l
 ls -tr
 mkdir

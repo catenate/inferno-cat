@@ -1,4 +1,4 @@
-set -efu
+set -fu
 selfdir=$(dirname $0)
 
 for arg in "$@"; do
@@ -17,16 +17,25 @@ if test -n "$set"; then
 	set $set
 fi
 
-logdir=${selfdir}/logs
-log=${log:-$1}
+if test -d /usr/coinferno/log; then
+	logdir=/usr/coinferno/log
+else
+	logdir=${selfdir}/log
+fi
 
+repo=$(basename $(git rev-parse --show-toplevel 2>/dev/null) 2>/dev/null)
+if test -n "$repo"; then
+	log=${log:-$repo}
+fi
+
+log=${log:-$1}
 logfile=${logdir}/${log}
 
 if ! test -d $logdir; then
 	mkdir -p $logdir
 fi
 
-echo -n "$(date)	$(pwd)	" >>$logfile
+echo -n "$(date '+%Y%m%d.%H%M%S')	$(pwd)	" >>$logfile
 
 for x in "$@"; do
 	if test "$(echo $x | wc -w)" -gt 1; then
@@ -36,3 +45,8 @@ for x in "$@"; do
 	fi
 done
 echo "" >>$logfile
+
+exec=${exec:-false}
+if $exec; then
+	"$@"
+fi

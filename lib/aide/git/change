@@ -2,6 +2,7 @@ git
 git add --all .
 git diff
 git diff --staged
+git update-index '--chmod=+x' 
 git | grep -v '^#' | cicd field 2
 nsh git diff
 nsh git diff --staged
